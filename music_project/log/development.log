@@ -4109,3 +4109,4 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
