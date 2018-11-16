@@ -1,7 +1,9 @@
 <h2> Band Selection: </h2>
 
 <h4>
+
 <% @bands.each do |band| %>
 <a href="<%= band_url(band) %>"><%= band.name %></a>
+  <br>
   <% end %>
 </h4>
