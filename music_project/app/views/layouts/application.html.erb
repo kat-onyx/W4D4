@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MusicProject</title>
+    <title>The Music Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <header>
+    <h1 class="music"> The Music Project </h1>
+    <%= yield :header %>
+  </header>
   <body>
+    <% if current_user %>
+      <div>
+      <%= "You're logged in as:" %>
+      <%= current_user.email %>
+      <br>
+      <form action="<%= session_url  %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input
+        type="hidden"
+        name="authenticity_token"
+        value='<%= form_authenticity_token %>'
+        />
+        <input type="submit" name="log_out" value="Sign out">
+      </div>
+    <% end %>
+
+
+    </form>
+    <br>
     <%= yield %>
   </body>
+  <footer> Music share.
+    <%= yield :footer %>
+  </footer>
 </html>

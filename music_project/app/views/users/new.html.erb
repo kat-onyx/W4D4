@@ -1,6 +1,12 @@
-Music things
+<h4> Sign up </h4>
 
 <form action="<%= users_url %>" method="post">
+  <input
+  type="hidden"
+  name="authenticity_token"
+  value='<%= form_authenticity_token %>'
+  />
+
   <label for="email">Email:</label>
   <input id="email" type="text" name="users[email]" value="">
   <br>
@@ -10,4 +16,15 @@ Music things
 
   <br>
   <input type="submit" name="submit_button" value="Create Account!">
+
+  <br>
+
+  <h4 text-color='red'>
+  <% if flash.now[:errors] %>
+    <% flash.now[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+  </h4>
+
 </form>

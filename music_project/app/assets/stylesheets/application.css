@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
+ h1.music {
+     font-family: fantasy;
+ }
+
+ body.vsc-initialized {
+   text-align: center;
+   background-color: floralwhite;
+ }
